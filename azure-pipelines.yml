@@ -16,6 +16,8 @@ variables:
 
 steps:
 - task: NuGetToolInstaller@1
+- publish: $(System.DefaultWorkingDirectory)/bin/
+  artifact: SharpRoast.exe
 
 - task: NuGetCommand@2
   inputs:
@@ -31,3 +33,4 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+    
